@@ -17,15 +17,16 @@ def part_configuration_selector(unit_type):
     row_count = 0
 
     match unit_type:
-        case "AA2JE":
-            df = pd.read_csv('masking_coordinate_AA2JE.csv')
-            print("masking_coordinate_AA2JE")
-        case "AA7NE_AA7RE":
-            df = pd.read_csv('masking_coordinate_AA7NE_AA7RE.csv')
-            print("masking_coordinate_AA7NE_AA7RE")
-        case "ADXDE_ADXFE":
-            df = pd.read_csv('masking_coordinate_ADXDE_ADXFE.csv')
-            print("masking_coordinate_ADXDE_ADXFE")
+        case "AA2JF":
+            df = pd.read_csv('masking_coordinate_AA2JF.csv')
+            print("masking_coordinate_AA2JF")
+        case "ADXJF":
+            df = pd.read_csv('masking_coordinate_ADXJF.csv')
+            print("masking_coordinate_ADXJF")
+        case "CUSTOM":
+            df = pd.read_csv('masking_coordinate_CUSTOM.csv')
+            print("masking_coordinate_CUSTOM")
+
 
 
 def click_event(event, x, y, flags, params):
@@ -106,11 +107,11 @@ def task3():
     TextBox_ID = Text(win, height=2, width=40, bg="light yellow")
     TextBox_Note = Text(win, height=1, width=10, bg="light yellow")
 
-    radio_button1 = Radiobutton(win, text="AA2JE", variable=var2, value="AA2JE", indicator=2, background="light blue",
+    radio_button1 = Radiobutton(win, text="AA2JF", variable=var2, value="AA2JF", indicator=2, background="light blue",
                                 command=display_input, font='Helvetica 12 bold')
-    radio_button2 = Radiobutton(win, text="AA7NE_AA7RE", variable=var2, value="AA7NE_AA7RE", indicator=2, background="light blue",
+    radio_button2 = Radiobutton(win, text="ADXJF", variable=var2, value="ADXJF", indicator=2, background="light blue",
                                 command=display_input, font='Helvetica 12 bold')
-    radio_button3 = Radiobutton(win, text="ADXDE_ADXFE", variable=var2, value="ADXDE_ADXFE", indicator=2, background="light blue",
+    radio_button3 = Radiobutton(win, text="CUSTOM", variable=var2, value="CUSTOM", indicator=2, background="light blue",
                                 command=display_input, font='Helvetica 12 bold')
     Label1.grid(row=1, column=1, sticky=W, pady=2)
     Label2.grid(row=2, column=1, sticky=W, pady=2)
@@ -193,7 +194,7 @@ if __name__ == "__main__":
         t2 = threading.Thread(target=task2)
         t3 = threading.Thread(target=task3)
 
-        df = pd.read_csv('masking_coordinate_AA2JE.csv')
+        df = pd.read_csv('masking_coordinate_AA2JF.csv')
         t1.start()
         t2.start()
         t3.start()
