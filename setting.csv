@@ -1,0 +1,32 @@
+Setting,Parameter
+OK_PATH,\\192.168.100.248\13. aoi image\F815-AOI IMAGE\OK_IMAGE\
+NG_PATH,\\192.168.100.248\13. aoi image\F815-AOI IMAGE\NG_IMAGE\
+APP_PATH,
+conf_model,0.4
+conf_model2,0.7
+iou_model,0.3
+iou_model2,0.3
+fig_size_x,8
+fig_size_y,8
+frame_size_x,1280
+frame_size_y,720
+server,192.168.100.252
+database,BartenderGlobalVariable
+table,F815-AOI_Table
+uid,wms
+pwd,Stk@1688
+DSN,F815-AOI_Table
+model_EagleL,F815-QC-V13_openvino_model/
+model2,New Program with Model Log
+tcp_client,192.168.1.6
+tcp_port,502
+camera_id,0
+DATASET_PATH,\\192.168.100.248\13. aoi image\F815-AOI IMAGE\DATASET COLLECTION\
+dataset_collect,no
+scan_barcode,yes
+subplotx,4
+subploty,4
+imgmasking,1
+delay_variable,0.2
+Camera_API,
+model_EagleH,F815-QC-V14_openvino_model/
