@@ -177,16 +177,18 @@ if __name__ == "__main__":
         tcp_port = setting_list[21][1]
         camera_id = setting_list[22][1]
         DATASET_PATH = setting_list[23][1]
-        dataset_colection = setting_list[24][1]
+        dataset_colection = 0
         scan_barcode = setting_list[25][1]
-        imgmasking = setting_list[26][1]
+        subplotx = setting_list[26][1]
+        subploty = setting_list[27][1]
+        imgmasking = setting_list[28][1]
         delay_variable = setting_list[29][1]
-        area_variable = 1
-        print(model_inference)
-        print(camera_id)
+        camera_API = setting_list[30][1]
+        area_variable = setting_list[31][1]
+        station = "Estun robot"
 
         model = YOLO(model_inference,task = 'detect')
-        cap = cv2.VideoCapture(int(camera_id), cv2.CAP_DSHOW)
+        cap = cv2.VideoCapture(int(camera_id))
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, int(frame_size_x))
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, int(frame_size_y))
 
