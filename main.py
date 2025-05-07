@@ -57,10 +57,10 @@ def part_configuration_selector(unit_type):
     row_count = 0
 
     match unit_type:
-        case "AA2JF":
+        case "CUSTOM":
             #client.write_register(address=4000,value=10,slave=1)
-            df = pd.read_csv('masking_coordinate_AA2JF.csv')
-            with open('Part Cheking Configuration AA2JF.csv', 'r') as file:
+            df = pd.read_csv('masking_coordinate_CUSTOM.csv')
+            with open('Part Cheking Configuration CUSTOM.csv', 'r') as file:
                 reader = csv.reader(file, skipinitialspace=True, quoting=csv.QUOTE_NONE)
                 for row in reader:
                     row_count = row_count + 1
@@ -436,20 +436,18 @@ def task3():
     TextBox_ID = Text(win, height=2, width=40, bg="light yellow")
     TextBox_Note = Text(win, height=1, width=10, bg="light yellow")
 
-    radio_button1 = Radiobutton(win, text="AA2JF", variable=var2, value="AA2JF", indicator=2, background="light blue",
+    radio_button1 = Radiobutton(win, text="CUSTOM", variable=var2, value="CUSTOM", indicator=2, background="light blue",
                                 command=display_input, font='Helvetica 12 bold')
     radio_button2 = Radiobutton(win, text="ADXJF", variable=var2, value="ADXJF", indicator=2, background="light blue",
                                 command=display_input, font='Helvetica 12 bold')
-    radio_button3 = Radiobutton(win, text="ADXDE", variable=var2, value="ADXDE", indicator=2, background="light blue",
-                                command=display_input, font='Helvetica 12 bold')
+
     Label1.grid(row=1, column=1, sticky=W, pady=2)
     Label2.grid(row=2, column=1, sticky=W, pady=2)
     TextBox_ID.grid(row=1, column=2, sticky=W, pady=2)
     TextBox_Note.grid(row=2, column=2, sticky=W, pady=2)
 
-    radio_button1.grid(row=1, column=3, sticky=W, pady=2)
-    radio_button2.grid(row=2, column=3, sticky=W, pady=2)
-    radio_button3.grid(row=3, column=3, sticky=W, pady=2)
+    radio_button2.grid(row=1, column=3, sticky=W, pady=2)
+    radio_button1.grid(row=2, column=3, sticky=W, pady=2)
 
 
     Check1.grid(row=1, column=4, sticky=W, pady=2)
@@ -516,7 +514,7 @@ if __name__ == "__main__":
         camera_API = setting_list[30][1]
         station = "Estun robot"
 
-        df = pd.read_csv('masking_coordinate_AA2JF.csv')
+        df = pd.read_csv('masking_coordinate_ADXJF.csv')
         cnxn = pyodbc.connect(
             'DRIVER={SQL Server};SERVER=' + server + ';DATABASE=' + database + ';UID=' + uid + ';PWD=' + pwd + '')
         cnxn = pyodbc.connect('DSN=' + DSN + ';UID=' + uid + ';PWD=' + pwd + '')

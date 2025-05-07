@@ -16,7 +16,7 @@ table,F710-AOI_Table
 uid,wms
 pwd,Stk@1688
 DSN,F710-AOI_Table
-model,F710V8_openvino_model/
+model,F710-ESTUN_openvino_model/
 model2,
 tcp_client,192.168.1.6
 tcp_port,502
